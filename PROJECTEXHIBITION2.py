@@ -15,6 +15,7 @@ from sklearn.pipeline import make_pipeline
 from sklearn.linear_model import Ridge
 FILE_PATH = r"C:\Users\LENOVO\Desktop\SpotifyFeatures.csv"
 @st.cache_data
+
 def load_data():
     try:
         df = pd.read_csv(FILE_PATH)
@@ -28,6 +29,7 @@ def load_data():
     except pd.errors.ParserError:
         st.error("❌ Error parsing the file. Ensure it's a valid CSV.")
         return None
+
 def load_dataset():
     df = load_data()
     if df is None:
@@ -48,6 +50,7 @@ def load_dataset():
     closest()
     st.success("Data cleaned and arranged properly.")
 @st.cache_data
+
 def closest():
     FILE_PATH = r"C:\Users\LENOVO\Desktop\SpotifyFeatures.csv"
     df = pd.read_csv(FILE_PATH)
@@ -239,3 +242,4 @@ def main():
 if __name__ == "__main__":
 
     main()
+
