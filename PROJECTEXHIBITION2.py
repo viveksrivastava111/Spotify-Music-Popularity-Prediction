@@ -94,6 +94,7 @@ def find_closest_match(input_data, selected_genre):
     else:
         closest_song = df.iloc[closest_index]
     return closest_song
+
 def train_dataset():
     if 'df' not in st.session_state:
         st.error("Dataset not loaded. Please load the dataset first.")
@@ -128,6 +129,7 @@ def train_dataset():
         st.success(f"{model_name} trained successfully in {duration:.2f} seconds.")
     st.session_state.models = models
     st.success("All models trained and stored successfully.")
+
 def display_accuracy():
     if 'models' not in st.session_state:
         st.error("⚠ Models not trained. Train them first.")
@@ -141,6 +143,7 @@ def display_accuracy():
         r2 = r2_score(y, predictions)
         accuracy = accuracy_predict(r2, name)  
         st.write(f"📈 {name} - Accuracy: {accuracy:.4f}")  
+
 def plot_graph():
     if 'models' not in st.session_state:
         st.error("⚠ Models not trained. Train them first.")
@@ -242,4 +245,5 @@ def main():
 if __name__ == "__main__":
 
     main()
+
 
