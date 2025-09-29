@@ -74,6 +74,7 @@ def closest():
     st.session_state.feature_names = [col for col in df.columns if col not in ['track_name', 'artist_name', 'genre', 'popularity']]
     st.session_state.metadata_df = df[['track_name', 'artist_name', 'genre','popularity']+st.session_state.feature_names]
     return df
+
 def find_closest_match(input_data, selected_genre):
     df = st.session_state.metadata_df
     feature_columns = st.session_state.feature_names
@@ -168,6 +169,7 @@ def plot_graph():
     plt.legend()
     plt.title('Model Predictions vs Ground Truth')
     st.pyplot(plt)
+
 def correlation_matrix():
     if 'df' not in st.session_state:
         st.error("⚠ Dataset not loaded. Load it first.")
@@ -177,6 +179,7 @@ def correlation_matrix():
     sns.heatmap(df.corr(), annot=True, fmt=".2f", cmap='coolwarm', square=True)
     plt.title('🔗 Correlation Matrix')
     st.pyplot(plt)
+
 def accuracy_predict(accuracy, model_name):
     return accuracy * {"Linear Regression": 2.5}.get(model_name, 1)
 def predict_popularity():
@@ -245,5 +248,6 @@ def main():
 if __name__ == "__main__":
 
     main()
+
 
 
