@@ -182,6 +182,7 @@ def correlation_matrix():
 
 def accuracy_predict(accuracy, model_name):
     return accuracy * {"Linear Regression": 2.5}.get(model_name, 1)
+
 def predict_popularity():
     if 'models' not in st.session_state:
         st.error("Models not trained. Please train the models first.")
@@ -248,6 +249,7 @@ def main():
 if __name__ == "__main__":
 
     main()
+
 
 
 
