@@ -35,7 +35,6 @@ def load_dataset():
     df = load_data()
     if df is None:
         return
-        
     st.success("Dataset loaded successfully.")
     st.write(df.head(200000))
     df.drop_duplicates(subset=['track_id'], keep='first', inplace=True)
@@ -251,4 +250,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
