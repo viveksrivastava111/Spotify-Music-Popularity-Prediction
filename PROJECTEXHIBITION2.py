@@ -67,6 +67,7 @@ def closest():
     if df['time_signature'].dtype == object:
         df['time_signature'] = pd.to_numeric(df['time_signature'].str.replace('/', ''), errors='coerce')
     time_sig_dummies = pd.get_dummies(df['time_signature'], prefix='time_signature')
+    
     df = pd.concat([df, time_sig_dummies], axis=1)
     df['duration_s'] = df['duration_ms'] / 1000
     df.drop(columns=['time_signature'], inplace=True)
@@ -250,3 +251,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
