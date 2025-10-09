@@ -16,7 +16,6 @@ from sklearn.linear_model import Ridge
 
 FILE_PATH = r"C:\Users\LENOVO\Desktop\SpotifyFeatures.csv"
 @st.cache_data
-
 def load_data():
     try:
         df = pd.read_csv(FILE_PATH)
@@ -251,4 +250,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
