@@ -51,6 +51,7 @@ def load_dataset():
     st.success("Data cleaned and arranged properly.")
 @st.cache_data
 
+
 def closest():
     FILE_PATH = r"C:\Users\LENOVO\Desktop\SpotifyFeatures.csv"
     df = pd.read_csv(FILE_PATH)
@@ -250,5 +251,6 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
