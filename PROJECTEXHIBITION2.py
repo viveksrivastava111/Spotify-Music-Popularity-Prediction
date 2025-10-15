@@ -1,7 +1,6 @@
 import numpy as np
 import pandas as pd
 from sklearn import linear_model
-
 from sklearn.model_selection import train_test_split, KFold
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.tree import DecisionTreeRegressor
@@ -11,7 +10,6 @@ import xgboost as xgb
 from sklearn.metrics import r2_score
 import time
 import streamlit as st
-
 from sklearn.preprocessing import PolynomialFeatures, StandardScaler, QuantileTransformer, PowerTransformer
 from sklearn.pipeline import make_pipeline
 from sklearn.linear_model import Ridge
@@ -252,6 +250,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
 
