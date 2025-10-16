@@ -230,7 +230,9 @@ def predict_popularity():
                 st.write("No matching song found for the selected genre.")
         except Exception as e:
             st.error(f"❌ An error occurred during prediction: {e}")
-            
+
+
+
 def main():
     st.title("🎵 Spotify Features Analysis")
     menu = ["Load Dataset", "Train Models", "Display Accuracy", "Plot Graph", "Correlation Matrix", "Predict Popularity"]
@@ -250,6 +252,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
 
