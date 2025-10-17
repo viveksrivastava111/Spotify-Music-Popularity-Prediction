@@ -30,6 +30,7 @@ def load_data():
         st.error("❌ Error parsing the file. Ensure it's a valid CSV.")
         return None
 
+
 def load_dataset():
     df = load_data()
     if df is None:
@@ -252,6 +253,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
 
