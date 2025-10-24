@@ -14,6 +14,7 @@ from sklearn.preprocessing import PolynomialFeatures, StandardScaler, QuantileTr
 from sklearn.pipeline import make_pipeline
 from sklearn.linear_model import Ridge
 
+
 FILE_PATH = r"C:\Users\LENOVO\Desktop\SpotifyFeatures.csv"
 @st.cache_data
 def load_data():
@@ -253,6 +254,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
 
