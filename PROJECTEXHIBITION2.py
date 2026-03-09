@@ -15,6 +15,11 @@ from sklearn.pipeline import make_pipeline
 from sklearn.linear_model import Ridge
 
 
+def load_dataset():
+    df = load_data()
+    if df is None:
+        return
+
 FILE_PATH = r"C:\Users\LENOVO\Desktop\SpotifyFeatures.csv"
 @st.cache_data
 def load_data():
@@ -253,6 +258,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
 
