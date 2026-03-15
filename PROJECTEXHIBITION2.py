@@ -14,26 +14,7 @@ from sklearn.preprocessing import PolynomialFeatures, StandardScaler, QuantileTr
 from sklearn.pipeline import make_pipeline
 from sklearn.linear_model import Ridge
 
-def load_dataset():
-    df = load_data()
-    if df is None:
-        return
-    st.success("Dataset loaded successfully.")
-    st.write(df.head(200000))
-    df.drop_duplicates(subset=['track_id'], keep='first', inplace=True)
-    df.drop(['genre', 'artist_name', 'track_name', 'track_id', 'key'], axis=1, inplace=True)
-    df['mode'] = df['mode'].map({'Major': 1, 'Minor': 0})
-    if df['time_signature'].dtype == 'object':
-        df['time_signature'] = pd.to_numeric(df['time_signature'].str.replace('/', ''), errors='coerce')
-    time_signature_df = pd.get_dummies(df["time_signature"], prefix='time_signature')
-    df = pd.concat([df, time_signature_df], axis=1)
-    df['duration_ms'] = df['duration_ms'] / 1000
-    df.rename(columns={'duration_ms': 'duration_s'}, inplace=True)
-    df.drop(['time_signature'], axis=1, inplace=True)
-    st.session_state.df = df
-    closest()
-    st.success("Data cleaned and arranged properly.")
-@st.cache_data
+
 
 FILE_PATH = r"C:\Users\LENOVO\Desktop\SpotifyFeatures.csv"
 @st.cache_data
