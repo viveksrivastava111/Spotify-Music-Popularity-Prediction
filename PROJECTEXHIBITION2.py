@@ -252,6 +252,24 @@ def main():
     elif choice == "Predict Popularity":
         predict_popularity()
 
+if st.button("Predict Popularity"):
+        model = st.session_state.models[model_choice]
+        try:
+            predicted_popularity = model.predict(input_data)[0]
+            st.success(f"🎵 Predicted Popularity: {predicted_popularity:.2f}")
+            closest_song = find_closest_match(input_data, selected_genre)
+            if closest_song is not None:
+                st.write("### Closest Match:")
+                st.write(f"*Track Name:* {closest_song['track_name']}")
+                st.write(f"*Artist Name:* {closest_song['artist_name']}")
+                st.write(f"*Genre:* {closest_song['genre']}")
+                st.write(f"*Popularity:* {closest_song['popularity']}")
+            else:
+                st.write("No matching song found for the selected genre.")
+        except Exception as e:
+            st.error(f"❌ An error occurred during prediction: {e}")
+
+
 if __name__ == "__main__":
     main()
 
